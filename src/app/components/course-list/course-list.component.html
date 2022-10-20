@@ -1,3 +1,20 @@
-<p *ngFor="let tempCourse of courses">
-  {{ tempCourse.title }}: {{ tempCourse.price | currency: "USD" }}
-</p>
+<table class="table">
+  <thead class="table-dark">
+    <tr>
+      <th></th>
+      <th>Course Name</th>
+      <th>Company</th>
+      <th>Price</th>
+      <th>Purchase date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let tempCourse of courses">
+      <td></td>
+      <td>{{ tempCourse.title }}</td>
+      <td>{{ tempCourse.company_id }}</td>
+      <td>{{ tempCourse.price }}</td>
+      <td>{{ tempCourse.date_purchased }}</td>
+    </tr>
+  </tbody>
+</table>

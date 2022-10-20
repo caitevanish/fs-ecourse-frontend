@@ -1,4 +1,4 @@
-import { CourseCompany } from './../common/course-company';
+import { CourseCompany } from '../common/course-company';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
@@ -12,13 +12,15 @@ export class CourseCompanyService {
   constructor(private httpClient: HttpClient) {}
 
   getCompanyList(): Observable<CourseCompany[]> {
-    return this.httpClient
-      .get<GetResponse>(this.baseUrl)
-      .pipe(map((response) => response._embedded.companies));
+    return (
+      this.httpClient
+        .get<GetResponse>(this.baseUrl)
+        .pipe(map((response) => response._embedded.course_company))
+    );
   }
 }
 interface GetResponse {
   _embedded: {
-    companies: CourseCompany[];
+    course_company: CourseCompany[];
   };
 }
