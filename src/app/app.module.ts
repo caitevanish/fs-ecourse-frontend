@@ -9,6 +9,7 @@ import { CompanyListComponent } from './components/company-list/company-list.com
 import { CourseFormComponent } from './components/course-form/course-form.component';
 import { CompanyFormComponent } from './components/company-form/company-form.component';
 import { AppRoutingModule } from './app-routing.module';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { AppRoutingModule } from './app-routing.module';
     CompanyListComponent,
     CourseFormComponent,
     CompanyFormComponent,
+    DashboardComponent,
   ],
   imports: [BrowserModule, HttpClientModule, AppRoutingModule],
   providers: [CourseService],
