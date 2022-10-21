@@ -16,7 +16,9 @@
     <tr *ngFor="let tempCompany of companies">
       <td></td>
       <td>{{ tempCompany.company_name }}</td>
-      <td>{{ tempCompany.website }}</td>
+      <td>
+        <a href="{{ tempCompany.website }}">{{ tempCompany.website }}</a>
+      </td>
     </tr>
   </tbody>
 </table>

@@ -5,18 +5,28 @@
   </div>
   <div class="menu-sidebar-content">
     <nav class="nav-sidebar">
-      <ul class="list-unstyled">
+      <ul class="list-unstyled nav-list">
         <li>
           <a href="#" disabled>Start Here</a>
         </li>
         <li>
           <a href="#">Courses</a>
+          <ul>
+            <li>
+              <a href="#">Add Course</a>
+            </li>
+            <li>
+              <a href="#">View All</a>
+            </li>
+          </ul>
         </li>
         <li>
           <a href="#">Companies</a>
           <!-- Nested list of Companies -->
           <ul *ngFor="let tempCompany of companies">
-            <li><a href="#">{{tempCompany.company_name}}</a></li>
+            <li>
+              <a href="#">{{ tempCompany.company_name }}</a>
+            </li>
           </ul>
         </li>
       </ul>
@@ -26,13 +36,18 @@
 <!-- End Sidebar -->
 
 <!-- Main Page Container -->
+<div class="custom-container">
+  <header class="header"></header>
+</div>
+
+<div class="main-content">
+  <div class="container">
+    <h1 class="mt-3 mb-3">Courses</h1>
+    <app-course-list></app-course-list>
+    <h1 class="mt-3 mb-3">Companies</h1>
+    <app-company-list></app-company-list>
+  </div>
+</div>
 <!-- End Page Container -->
 
 <!--  -->
-
-<div class="container">
-  <h1 class="mt-3 mb-3">Courses</h1>
-  <app-course-list></app-course-list>
-  <h1 class="mt-3 mb-3">Companies</h1>
-  <app-company-list></app-company-list>
-</div>

@@ -1,1 +1,63 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+  /* box-sizing: border-box; */
+}
+
+a {
+  display: inline-block;
+}
+
+.menu-sidebar {
+  width: 200px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(128, 0, 128, 0.25);
+  overflow-y: auto;
+}
+
+.menu-sidebar .logo {
+  height: 75px;
+  padding: 0 35px;
+}
+
+.menu-sidebar-content {
+  position: relative;
+}
+
+.nav-sidebar {
+  padding: 35px;
+  padding-bottom: 0;
+}
+
+.nav-sidebar .nav-list li a {
+  display: block;
+  color: #555;
+  font-size: 16px;
+  padding: 5px 0;
+  text-decoration: none;
+}
+
+.custom-container {
+  /* background: #e5e5e5; */
+  padding-left: 200px;
+}
+
+/* -----Header---- */
+.header {
+  background: rgba(128, 0, 128, 1);
+  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 20%);
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 75px;
+  margin-bottom: auto;
+}
+
+.main-content {
+  padding-top: 116px;
+  min-height: 100vh;
+}
