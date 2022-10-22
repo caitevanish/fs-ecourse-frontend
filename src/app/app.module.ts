@@ -6,21 +6,26 @@ import { CourseListComponent } from './components/course-list/course-list.compon
 import { HttpClientModule } from '@angular/common/http';
 import { CourseService } from './services/course.service';
 import { CompanyListComponent } from './components/company-list/company-list.component';
-import { CourseFormComponent } from './components/course-form/course-form.component';
-import { CompanyFormComponent } from './components/company-form/company-form.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { CourseDetailsComponent } from './components/course-details/course-details.component';
+import { FormsModule } from '@angular/forms';
+import { AddCourseComponent } from './components/add-course/add-course.component';
+import { AddCompanyComponent } from './components/add-company/add-company.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CourseListComponent,
     CompanyListComponent,
-    CourseFormComponent,
-    CompanyFormComponent,
     DashboardComponent,
+    CourseDetailsComponent,
+    AddCourseComponent,
+    AddCompanyComponent,
+    NotFoundComponent,
   ],
-  imports: [BrowserModule, HttpClientModule, AppRoutingModule],
+  imports: [BrowserModule, HttpClientModule, AppRoutingModule, FormsModule],
   providers: [CourseService],
   bootstrap: [AppComponent],
 })

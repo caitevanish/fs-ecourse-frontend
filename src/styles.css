@@ -8,6 +8,11 @@ a {
   display: inline-block;
 }
 
+.active{
+  font-weight: bold;
+  text-decoration-style: double;
+}
+
 .menu-sidebar {
   width: 200px;
   position: fixed;
