@@ -16,7 +16,7 @@ const routes: Routes = [
   { path: 'add-company', component: AddCompanyComponent },
   { path: 'course-list', component: CourseListComponent },
   { path: 'company-list', component: CompanyListComponent },
-  { path: 'course/:id', component: CourseDetailsComponent },
+  { path: 'courses/:id', component: CourseDetailsComponent },
   // {path: "company-courses", component: }
   // {path: "profile", component: ProfileComponent}
   { path: '**', component: NotFoundComponent },

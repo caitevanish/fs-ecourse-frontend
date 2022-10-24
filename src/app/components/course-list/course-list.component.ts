@@ -16,9 +16,14 @@ export class CourseListComponent implements OnInit {
     this.listCourses();
   }
 
+  
+  // @To-Do: Get courses by user id!
+  
   listCourses() {
     this.courseService.getCourseList().subscribe((data) => {
       this.courses = data;
     });
   }
+
+  // @To-Do: Get courses by company id
 }

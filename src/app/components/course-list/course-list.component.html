@@ -14,7 +14,7 @@
     <tr *ngFor="let tempCourse of courses">
       <td></td>
       <td>
-        <a [routerLink]="['course', tempCourse.id]">{{ tempCourse.title }}</a>
+        <a routerLink="/courses/{{tempCourse.id}}">{{ tempCourse.title }}</a>
       </td>
       <td>{{ tempCourse.company_id }}</td>
       <td>${{ tempCourse.price }}</td>
