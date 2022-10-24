@@ -18,6 +18,10 @@ export class CourseService {
       .get<GetResponse>(this.baseUrl)
       .pipe(map((response) => response._embedded.courses));
   }
+
+  getCourseDetails(id: number): Observable<Course> {
+    return this.httpClient.get<Course>(this.baseUrl + `/${id}`);
+  }
 }
 interface GetResponse {
   _embedded: {
