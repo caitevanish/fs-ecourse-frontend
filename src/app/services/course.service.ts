@@ -3,8 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
 
-
-
 @Injectable({
   providedIn: 'root',
 })
@@ -22,9 +20,19 @@ export class CourseService {
   getCourseDetails(id: number): Observable<Course> {
     return this.httpClient.get<Course>(this.baseUrl + `/${id}`);
   }
+
+  saveCourse(): Observable<Course> {
+    return this.httpClient.put<PutResponse>(this.baseUrl, Course)
+    .pipe(map((response) => response._embedded.course));
+  }
 }
 interface GetResponse {
   _embedded: {
     courses: Course[];
+  };
+}
+interface PutResponse {
+  _embedded: {
+    course: Course;
   };
 }

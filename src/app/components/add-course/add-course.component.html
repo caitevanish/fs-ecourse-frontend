@@ -1,5 +1,44 @@
 <h1>Add a New Course</h1>
 
-<form action="">
-  
+<form [formGroup]="newCourseForm">
+  <fieldset>
+    <div>
+      <label for="course-title">Course Title</label>
+      <input
+        type="text"
+        [(ngModel)]="courseTitle"
+        [ngModelOptions]="{ standalone: true }"
+      />
+    </div>
+
+    <div>
+      <!--If company not present, then add new company-->
+      <label for="company">Company</label>
+      <input
+        type="text"
+        [(ngModel)]="company"
+        [ngModelOptions]="{ standalone: true }"
+      />
+    </div>
+
+    <div>
+      <label for="price">Price</label>
+      <input
+        type="text"
+        [(ngModel)]="price"
+        [ngModelOptions]="{ standalone: true }"
+      />
+    </div>
+
+    <div>
+      <label for="purchase-date">Purchase Date</label>
+      <input
+        name="purchase-date"
+        type="date"
+        [(ngModel)]="date"
+        [ngModelOptions]="{ standalone: true }"
+      />
+    </div>
+  </fieldset>
+  <button (click)="addNewCourse()">Add Course</button>
 </form>

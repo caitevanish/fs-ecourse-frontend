@@ -9,7 +9,7 @@ import { CompanyListComponent } from './components/company-list/company-list.com
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { CourseDetailsComponent } from './components/course-details/course-details.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddCourseComponent } from './components/add-course/add-course.component';
 import { AddCompanyComponent } from './components/add-company/add-company.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
@@ -25,7 +25,13 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     AddCompanyComponent,
     NotFoundComponent,
   ],
-  imports: [BrowserModule, HttpClientModule, AppRoutingModule, FormsModule],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
   providers: [CourseService],
   bootstrap: [AppComponent],
 })

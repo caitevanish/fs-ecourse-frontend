@@ -4,7 +4,7 @@ export class Course {
   title: string;
   company_id: number;
   price: number;
-  date_purchased: number;
+  date_purchased: Date;
 
   constructor(
     id: number,
@@ -12,7 +12,7 @@ export class Course {
     title: string,
     company_id: number,
     price: number,
-    date_purchased: number
+    date_purchased: Date
   ) {
     (this.id = id),
       (this.user_id = user_id),
