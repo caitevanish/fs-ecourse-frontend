@@ -21,9 +21,10 @@ export class CourseService {
     return this.httpClient.get<Course>(this.baseUrl + `/${id}`);
   }
 
-  saveCourse(): Observable<Course> {
-    return this.httpClient.put<PutResponse>(this.baseUrl, Course)
-    .pipe(map((response) => response._embedded.course));
+  saveCourse(course: Course): Observable<Course> {
+    return this.httpClient
+      .put<PutResponse>(this.baseUrl, Course)
+      .pipe(map((response) => response._embedded.course));
   }
 }
 interface GetResponse {

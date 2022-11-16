@@ -31,6 +31,63 @@
             </div>
           </div>
 
+          <!-- Add check box to add a new company -->
+          <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-9">
+              <div class="input-space">
+                <label class="au-checkbox">
+                  <!-- Where the toggling action is at -->
+                  <input
+                    type="checkbox"
+                    [checked]="isShowingCompanyForm"
+                    (change)="
+                      this.isShowingCompanyForm = !this.isShowingCompanyForm
+                    "
+                  />
+
+                  <span class="au-checkmark"></span>Add a new company
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Toggle visibility with checkbox -->
+          <div *ngIf="isShowingCompanyForm">
+            <form action="" [formGroup]="newCompanyFormGroup">
+              <div formGroupName="company" class="form-area">
+                <h3>Add New Company</h3>
+                <div class="row">
+                  <div class="col-md-2">
+                    <label>Name</label>
+                  </div>
+                  <div class="col-md-9">
+                    <div class="input-space">
+                      <input
+                        formControlName="companyName"
+                        type="text"
+                        required="required"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-2">
+                    <label>Website</label>
+                  </div>
+                  <div class="col-md-9">
+                    <div class="input-space">
+                      <input formControlName="companyWebsite" type="text" />
+                    </div>
+                  </div>
+                </div>
+                <button class="btn btn-primary" (click)="addNewCompany($event)">
+                  Add Company
+                </button>
+              </div>
+            </form>
+          </div>
+
           <!-- 
           <div>
           If company not present, then add new company
@@ -43,27 +100,41 @@
           </div> 
           -->
 
-          <div>
-            <label for="price">Price</label>
-            <input
-              type="text"
-              [(ngModel)]="price"
-              [ngModelOptions]="{ standalone: true }"
-            />
+          <div class="row">
+            <div class="col-md-2">
+              <label for="price">Price</label>
+            </div>
+            <div class="col-md-9">
+              <div class="input-space">
+                <input
+                  type="text"
+                  [(ngModel)]="price"
+                  [ngModelOptions]="{ standalone: true }"
+                />
+              </div>
+            </div>
           </div>
 
-          <div>
-            <label for="purchase-date">Purchase Date</label>
-            <input
-              name="purchase-date"
-              type="date"
-              [(ngModel)]="date"
-              [ngModelOptions]="{ standalone: true }"
-            />
+          <div class="row">
+            <div class="col-md-2">
+              <label for="purchase-date">Purchase Date</label>
+            </div>
+            <div class="col-md-9">
+              <div class="input-space">
+                <input
+                  name="purchase-date"
+                  type="date"
+                  [(ngModel)]="date"
+                  [ngModelOptions]="{ standalone: true }"
+                />
+              </div>
+            </div>
           </div>
 
           <div class="text-center">
-            <button (click)="onSubmit()">Add Course</button>
+            <button class="btn btn-primary" (click)="onSubmit()">
+              Add Course
+            </button>
           </div>
         </div>
       </form>
