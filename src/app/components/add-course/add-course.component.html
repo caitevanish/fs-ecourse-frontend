@@ -1,44 +1,72 @@
 <h1>Add a New Course</h1>
+<div class="main-content page-m">
+  <div class="section-content section-content-p30">
+    <div class="container-fluid">
+      <form [formGroup]="newCourseFormGroup">
+        <!-- Course form group -->
+        <div formGroupName="course" class="form-area">
+          <h3>Course Info</h3>
+          <div class="row">
+            <div class="col-md-2">
+              <label>Course Title</label>
+            </div>
+            <div class="col-md-9">
+              <div class="input-space">
+                <input formControlName="title" type="text" />
+              </div>
+            </div>
+          </div>
 
-<form [formGroup]="newCourseForm">
-  <fieldset>
-    <div>
-      <label for="course-title">Course Title</label>
-      <input
-        type="text"
-        [(ngModel)]="courseTitle"
-        [ngModelOptions]="{ standalone: true }"
-      />
-    </div>
+          <div class="row">
+            <div class="col-md-2">
+              <label>Company</label>
+            </div>
+            <div class="col-md-9">
+              <div class="input-space">
+                <select formControlName="company">
+                  <!-- <option *ngFor="let company of companies">{{company.name}}</option> -->
+                  <option>TO DO</option>
+                </select>
+              </div>
+            </div>
+          </div>
 
-    <div>
-      <!--If company not present, then add new company-->
-      <label for="company">Company</label>
-      <input
-        type="text"
-        [(ngModel)]="company"
-        [ngModelOptions]="{ standalone: true }"
-      />
-    </div>
+          <!-- 
+          <div>
+          If company not present, then add new company
+          <label for="company">Company</label>
+          <input
+            type="text"
+            [(ngModel)]="company"
+            [ngModelOptions]="{ standalone: true }"
+          />
+          </div> 
+          -->
 
-    <div>
-      <label for="price">Price</label>
-      <input
-        type="text"
-        [(ngModel)]="price"
-        [ngModelOptions]="{ standalone: true }"
-      />
-    </div>
+          <div>
+            <label for="price">Price</label>
+            <input
+              type="text"
+              [(ngModel)]="price"
+              [ngModelOptions]="{ standalone: true }"
+            />
+          </div>
 
-    <div>
-      <label for="purchase-date">Purchase Date</label>
-      <input
-        name="purchase-date"
-        type="date"
-        [(ngModel)]="date"
-        [ngModelOptions]="{ standalone: true }"
-      />
+          <div>
+            <label for="purchase-date">Purchase Date</label>
+            <input
+              name="purchase-date"
+              type="date"
+              [(ngModel)]="date"
+              [ngModelOptions]="{ standalone: true }"
+            />
+          </div>
+
+          <div class="text-center">
+            <button (click)="onSubmit()">Add Course</button>
+          </div>
+        </div>
+      </form>
     </div>
-  </fieldset>
-  <button (click)="addNewCourse()">Add Course</button>
-</form>
+  </div>
+</div>
